@@ -43,6 +43,9 @@ final class ExtendsToUses extends NodeVisitorAbstract
         if (! $node->extends instanceof Name) {
             return null;
         }
+        if ($node->name === null) {
+            return null;
+        }
 
         /** @var Name $resolvedName */
         $resolvedName = $node->extends->getAttribute('resolvedName');
